@@ -4,7 +4,7 @@ permalink: index.html
 
 # Please update this with your repository name and title
 repository-name: eYY-XXX-project-template
-title:
+title: e19-co227-Crop-Modelling-Tool-For-SriLanka
 ---
 
 [comment]: # "This is the standard layout for the project, but you can clean this and use your own template"
@@ -20,9 +20,10 @@ This is a sample image, to show how to add images to your page. To learn more op
  -->
 
 ## Team
--  eNumber, Name, [email](mailto:name@email.com)
--  eNumber, Name, [email](mailto:name@email.com)
--  eNumber, Name, [email](mailto:name@email.com)
+-  e19133, Arudchelvan Harishanth, [email](mailto:e19133@eng.pdn.ac.lk)
+-  e19137, Thevaranjan Hayanan, [email](mailto:e19137@eng.pdn.ac.lk))
+-  e19371, Muraleetharan Shantosh, [email](mailto:e19371@eng.pdn.ac.lk))
+-  e19494, Thevambikai Thevapalan, [email](mailto:e19494@eng.pdn.ac.lk))
 
 ## Table of Contents
 1. [Introduction](#introduction)
