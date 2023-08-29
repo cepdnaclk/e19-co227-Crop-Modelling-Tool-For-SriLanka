@@ -17,6 +17,10 @@ This is a sample image, to show how to add images to your page. To learn more op
 
 ![Sample Image](./images/sample.png)
  -->
+![Crop Plant](./images/PageShowingImage.jpg)
+
+Figure 1.1 Crop Plant
+
 
 ## Team
 -  e19133, Arudchelvan Harishanth, [email](mailto:e19133@eng.pdn.ac.lk)
