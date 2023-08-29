@@ -9,8 +9,7 @@ title: e19-co227-Crop-Modelling-Tool-For-SriLanka
 
 [comment]: # "This is the standard layout for the project, but you can clean this and use your own template"
 
-##Crop-Modelling-Tool-For-SriLanka
-
+## Crop-Modelling-Tool-For-Srilanka
 ---
 
 <!-- 
@@ -18,7 +17,7 @@ This is a sample image, to show how to add images to your page. To learn more op
 
 ![Sample Image](./images/sample.png)
  -->
- [Page Showing Image](./docs/images/PageShowingImage.jpg)
+ [Page Showing Image](./images/PageShowingImage.jpg)
 
 ## Team
 -  e19133, Arudchelvan Harishanth, [email](mailto:e19133@eng.pdn.ac.lk)
