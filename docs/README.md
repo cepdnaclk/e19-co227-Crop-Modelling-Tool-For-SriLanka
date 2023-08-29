@@ -18,6 +18,7 @@ This is a sample image, to show how to add images to your page. To learn more op
 
 ![Sample Image](./images/sample.png)
  -->
+ [Page Showing Image](./docs/images/PageShowingImage.jpg)
 
 ## Team
 -  e19133, Arudchelvan Harishanth, [email](mailto:e19133@eng.pdn.ac.lk)
@@ -34,7 +35,7 @@ This is a sample image, to show how to add images to your page. To learn more op
 
 ## Introduction
 
- description of the real world problem and solution, impact
+ A tool to facilitate crop modelling, for plants of importance in SriLankan agriculture.
 
 ## Other Sub Topics
 
