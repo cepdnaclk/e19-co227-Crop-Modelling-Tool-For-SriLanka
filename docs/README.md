@@ -42,8 +42,8 @@ This is a sample image, to show how to add images to your page. To learn more op
 
 ## Links
 
-- [Project Repository](https://github.com/cepdnaclk/e19-co227-Crop-Modelling-Tool-For-SriLanka.git){:target="_blank"}
-- [Project Page](https://cepdnaclk.github.io/e19-co227-Crop-Modelling-Tool-For-SriLanka/){:target="_blank"}
+- [Project Repository](https://github.com/cepdnaclk/e19-co227-Crop-Modelling-Tool-For-SriLanka.git)
+- [Project Page](https://cepdnaclk.github.io/e19-co227-Crop-Modelling-Tool-For-SriLanka/)
 - [Department of Computer Engineering](http://www.ce.pdn.ac.lk/)
 - [University of Peradeniya](https://eng.pdn.ac.lk/)
 
