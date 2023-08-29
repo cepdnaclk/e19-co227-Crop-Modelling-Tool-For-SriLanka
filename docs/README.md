@@ -17,7 +17,8 @@ This is a sample image, to show how to add images to your page. To learn more op
 
 ![Sample Image](./images/sample.png)
  -->
- [Page Showing Image](./images/PageShowingImage.jpg)
+ ![Page Showing Image](./images/PageShowingImage.jpg)
+ Figure 1.1 Page Showing Image
 
 ## Team
 -  e19133, Arudchelvan Harishanth, [email](mailto:e19133@eng.pdn.ac.lk)
