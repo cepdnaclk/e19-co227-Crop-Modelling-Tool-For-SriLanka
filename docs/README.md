@@ -9,7 +9,7 @@ title: e19-co227-Crop-Modelling-Tool-For-SriLanka
 
 [comment]: # "This is the standard layout for the project, but you can clean this and use your own template"
 
-# Project Title
+Crop-Modelling-Tool-For-SriLanka
 
 ---
 
@@ -20,10 +20,10 @@ This is a sample image, to show how to add images to your page. To learn more op
  -->
 
 ## Team
--  e19133, Arudchelvan Harishanth, [email](mailto:e19133@eng.pdn.ac.lk))
--  e19137, Thevaranjan Hayanan, [email](mailto:e19137@eng.pdn.ac.lk))
--  e19371, Muraleetharan Shantosh, [email](mailto:e19371@eng.pdn.ac.lk))
--  e19494, Thevambikai Thevapalan, [email](mailto:e19494@eng.pdn.ac.lk))
+-  e19133, Arudchelvan Harishanth, [email](mailto:e19133@eng.pdn.ac.lk)
+-  e19137, Thevaranjan Hayanan, [email](mailto:e19137@eng.pdn.ac.lk)
+-  e19371, Muraleetharan Shantosh, [email](mailto:e19371@eng.pdn.ac.lk)
+-  e19494, Thevambikai Thevapalan, [email](mailto:e19494@eng.pdn.ac.lk)
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -42,8 +42,8 @@ This is a sample image, to show how to add images to your page. To learn more op
 
 ## Links
 
-- [Project Repository](https://github.com/cepdnaclk/{{ page.repository-name }}){:target="_blank"}
-- [Project Page](https://cepdnaclk.github.io/{{ page.repository-name}}){:target="_blank"}
+- [Project Repository](https://github.com/cepdnaclk/e19-co227-Crop-Modelling-Tool-For-SriLanka.git){:target="_blank"}
+- [Project Page](https://cepdnaclk.github.io/e19-co227-Crop-Modelling-Tool-For-SriLanka/){:target="_blank"}
 - [Department of Computer Engineering](http://www.ce.pdn.ac.lk/)
 - [University of Peradeniya](https://eng.pdn.ac.lk/)
 
