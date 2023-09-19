@@ -53,20 +53,20 @@ Output Visualization: CROPLANKA provides users with multiple output options, inc
 ## How to Use CROPLANKA
 The guide outlines six essential steps for effectively utilizing CROPLANKA:
 
-Step 1: Open the CROPLANKA model.
-Step 2: Select the site or region (e.g., Anuradhapura).
-Step 3: Choose the crop (e.g., Paddy).
-Step 4: Select parameters for the scenarios, including initial water content, cultivar, sowing date, starting N, and sowing N, among others.
-Step 5: Click the "Run Model" button to initiate the analysis of your chosen scenarios.
-Step 6: Analyze the outcomes to make informed decisions about crop management.
+- Step 1: Open the CROPLANKA model.
+- Step 2: Select the site or region (e.g., Anuradhapura).
+- Step 3: Choose the crop (e.g., Paddy).
+- Step 4: Select parameters for the scenarios, including initial water content, cultivar, sowing date, starting N, and sowing N, among others.
+- Step 5: Click the "Run Model" button to initiate the analysis of your chosen scenarios.
+- Step 6: Analyze the outcomes to make informed decisions about crop management.
 
 ## Process
 
-#Ensuring Data Currency
+### Ensuring Data Currency
 
 At CROPLANKA, we understand the importance of keeping our database up-to-date with the latest scenarios and data to provide you with the most accurate and relevant insights for your crop management decisions. While updating the database with all scenarios can be a complex task, we have implemented a robust solution to ensure data currency:
 
-#Automated Scenario Updates
+### Automated Scenario Updates
 
 Maintaining an accurate and comprehensive database is at the core of our commitment to empowering you with the best possible crop management support. We have implemented an automated scenario update system that streamlines the process and guarantees the freshness of the data you rely on.
 
