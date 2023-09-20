@@ -274,7 +274,8 @@
             <div class="image-container">
                 <img src="images/logo.png" alt="Logo" height= auto width="100px">
             </div>
-            <form action="process_form.php" method="post">
+            <form action="connectboxs.php" method="post">
+                
                 <!-- Site Dropdown -->
                 <div class="input-group" style="display: flex; flex-direction: row;">
                     <div class="select-container">
@@ -400,7 +401,12 @@
 
         // Display the result texts or perform any desired action (e.g., sending the texts to the server)
         if (resultTexts.length > 0) {
-            alert("Results:\n" + resultTexts.join("\n"));
+            //alert("Results:\n" + resultTexts.join("\n"));
+            //window.location.href = 'connectboxs.php';
+            const resultTextsJSON = JSON.stringify(resultTexts);
+
+            // Redirect to hii.php with the resultTexts as a query parameter
+            window.location.href = 'connectboxs.php?resultTexts=' + encodeURIComponent(resultTextsJSON);
         }
     }
 
