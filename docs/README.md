@@ -19,7 +19,6 @@ This is a sample image, to show how to add images to your page. To learn more op
  -->
 ![Crop Plant](./images/PageShowingImage.jpg)
 
-Figure 1.1 Crop Plant
 
 
 
