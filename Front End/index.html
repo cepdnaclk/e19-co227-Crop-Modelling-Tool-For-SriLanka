@@ -252,7 +252,7 @@
         </div>
         <div class="step-box">
             <div class="step-title">STEP 5</div>
-            <div class="step-content">Click the Analyse button</div>
+            <div class="step-content">Click the Run Model button</div>
         </div>
         <div class="step-box">
             <div class="step-title">STEP 6</div>
@@ -260,13 +260,6 @@
         </div>
     </div>
     
-    
-    
-    
-    
-   
-
-    <!-- how to use -->
 
     <!-- model -->
     <div id="cropmodel" class="form-container">
@@ -275,35 +268,29 @@
                 <img src="images/logo.png" alt="Logo" height= auto width="100px">
             </div>
             <form action="connectboxs.php" method="post">
+        
                 
                 <!-- Site Dropdown -->
-                <div class="input-group" style="display: flex; flex-direction: row;">
-                    <div class="select-container">
-                        <label for="Site1">Site:</label>
-                        <select name="Site1" id="Site1">
-                            <option value="Anuradhapura">Anuradhapura</option>
-                            <!-- Add more options if needed -->
-                        </select>
-                    </div>
-                    
-                    <!-- Crop Dropdown -->
-                    <div class="select-container">
-                        <label for="crop">Crop (Fixed Parameter):</label>
-                        <select name="Crop" id="Crop">
-                            <option value="Paddy">Paddy</option>
-                            <!-- Add more options if needed -->
-                        </select>
+                <div class="input-group">
+                    <div class="text-box-containe">
+                        <label for="Parameter"><h3 class="center-green">SITE</h3></label>
+                        <input type="text" id="Parameter" name="Parameter" value="Anuradhapura" readonly>
                     </div>
                 </div>
-            
-                
-                
-                
-                
-                
+                <hr>
+                <!-- Crop Dropdown -->
+                <div class="input-group">
+                    <div class="text-box-containe">
+                        <label for="Parameter"><h3 class="center-green">CROP</h3></label>
+                        <input type="text" id="Parameter" name="Parameter" value="Paddy" readonly>
+                    </div>
+                </div>
+               
+                <hr>
                 <!-- Scenario (Variable Parameters) -->
-                <h2>Scenario</h2>
-    
+                <h3 class="center-green">SCENERIO</h3>
+
+                <hr>
                 <!-- Initial Water Content -->
                 <div class="checkbox-group">
                     <label>Initial Water Content:</label>
@@ -317,57 +304,122 @@
                     <label for="water_90">90</label>
                 </div>
     
-                <!-- Cultivar -->
-                <div class="checkbox-group">
-                    <label>Cultivar:</label>
-                    <input type="checkbox" id="cultivar_bg300" name="cultivar" value="Bg300">
-                    <label for="cultivar_bg300">Bg300</label>
-                </div>
-    
+                
+                <hr>
                 <!-- Sowing Date -->
                 <div class="checkbox-group">
-                    <label>Sowing Date:</label>
-                    <input type="checkbox" id="date_20_apr" name="sowing_date" value="20-Apr">
-                    <label for="date_20_apr">20-Apr</label>
-    
-                    <input type="checkbox" id="date_10_may" name="sowing_date" value="10-May">
-                    <label for="date_10_may">10-May</label>
+                    <div class="column">
+                        <label>Sowing Date:</label>
+                        <br>
+                        <input type="checkbox" id="date_07_apr" name="sowing_date" value="07-Apr">
+                        <label for="date_07_apr">07-Apr</label>
+                
+                        <input type="checkbox" id="date_14_apr" name="sowing_date" value="14-Apr">
+                        <label for="date_14_apr">14-Apr</label>
+                
+                        <input type="checkbox" id="date_21_apr" name="sowing_date" value="21-Apr">
+                        <label for="date_21_apr">21-Apr</label>
+                
+                        <input type="checkbox" id="date_28_apr" name="sowing_date" value="28-Apr">
+                        <label for="date_28_apr">28-Apr</label>
+                    </div>              
+                    <div class="column">
+                        <input type="checkbox" id="date_07_oct" name="sowing_date" value="07-oct">
+                        <label for="date_07_oct">07-Oct</label>
+                
+                        <input type="checkbox" id="date_14_oct" name="sowing_date" value="14-oct">
+                        <label for="date_14_oct">14-Oct</label>
+                
+                        <input type="checkbox" id="date_21_oct" name="sowing_date" value="21-oct">
+                        <label for="date_21_oct">21-Oct</label>
+                
+                        <input type="checkbox" id="date_28_oct" name="sowing_date" value="28-oct">
+                        <label for="date_28_oct">28-Oct</label>
+                    </div>
                 </div>
-    
-                <!-- Starting N -->
-                <div class="checkbox-group">
-                    <label>Starting N:</label>
-                    <input type="checkbox" id="starting_n_10_15" name="starting_n" value="10.15">
-                    <label for="starting_n_10_15">10.15</label>
-                </div>
-    
+                
+                <hr>
                 <!-- Sowing N -->
                 <div class="checkbox-group">
                     <label>Sowing N:</label>
-                    <input type="checkbox" id="sowing_n_3" name="sowing_n" value="3">
-                    <label for="sowing_n_3">3</label>
+                    <input type="checkbox" id="sowing_n_10" name="sowing_n" value="10">
+                    <label for="sowing_n_10">10</label>
     
-                    <input type="checkbox" id="sowing_n_5" name="sowing_n" value="5">
-                    <label for="sowing_n_5">5</label>
+                    <input type="checkbox" id="sowing_n_20" name="sowing_n" value="20">
+                    <label for="sowing_n_20">20</label>
+
+                    <input type="checkbox" id="sowing_n_30" name="sowing_n" value="30">
+                    <label for="sowing_n_30">30</label>
+
+                    <input type="checkbox" id="sowing_n_40" name="sowing_n" value="40">
+                    <label for="sowing_n_40">40</label>
+
+                    <input type="checkbox" id="sowing_n_50" name="sowing_n" value="50">
+                    <label for="sowing_n_50">50</label>
+
+                    <input type="checkbox" id="sowing_n_100" name="sowing_n" value="100">
+                    <label for="sowing_n_100">100</label>
                 </div>
-    
-                <!-- Side Dressing N -->
+                
+                <hr>
+                <!-- Fertilizer 2 week after sowing -->
                 <div class="checkbox-group">
-                    <label>Side Dressing N:</label>
-                    <input type="checkbox" id="side_dressing_n_5" name="side_dressing_n" value="5">
-                    <label for="side_dressing_n_5">5</label>
+                    <label>Fertilizer (2 weeks after sowing):</label>
+                    <input type="checkbox" id="F2WAS_00" name="F2WAS" value="00">
+                    <label for="F2WAS_0">0</label>
     
-                    <input type="checkbox" id="side_dressing_n_7" name="side_dressing_n" value="7">
-                    <label for="side_dressing_n_7">7</label>
+                    <input type="checkbox" id="F2WAS_20" name="F2WAS" value="20">
+                    <label for="F2WAS_20">20</label>
+
+                    <input type="checkbox" id="F2WAS_40" name="F2WAS" value="40">
+                    <label for="F2WAS_40">40</label>
+
+                    <input type="checkbox" id="F2WAS_60" name="F2WAS" value="60">
+                    <label for="F2WAS_60">60</label>
+                </div>
+
+                <hr>
+                <!-- Fertilizer 4 week after sowing -->
+                <div class="checkbox-group">
+                    <label>Fertilizer (4 weeks after sowing):</label>
+                    <input type="checkbox" id="F4WAS_00" name="F4WAS" value="00">
+                    <label for="F4WAS_0">0</label>
+    
+                    <input type="checkbox" id="F4WAS_20" name="F4WAS" value="20">
+                    <label for="F4WAS_20">20</label>
+
+                    <input type="checkbox" id="F4WAS_40" name="F4WAS" value="40">
+                    <label for="F4WAS_40">40</label>
+
+                    <input type="checkbox" id="F4WAS_60" name="F4WAS" value="60">
+                    <label for="F4WAS_60">60</label>
+                </div>
+
+                <hr>
+                <!-- Fertilizer 6 week after sowing -->
+                <div class="checkbox-group">
+                    <label>Fertilizer (6 weeks after sowing):</label>
+                    <input type="checkbox" id="F6WAS_00" name="F6WAS" value="00">
+                    <label for="F6WAS_0">0</label>
+    
+                    <input type="checkbox" id="F6WAS_20" name="F6WAS" value="20">
+                    <label for="F6WAS_20">20</label>
+
+                    <input type="checkbox" id="F6WAS_40" name="F6WAS" value="40">
+                    <label for="F6WAS_40">40</label>
+
+                    <input type="checkbox" id="F6WAS_60" name="F6WAS" value="60">
+                    <label for="F6WAS_60">60</label>
                 </div>
     
                 <!-- Submit Button -->
+                <br>
                 <div class="submit-group">
                     <input type="submit" value="Run Model">
                 </div>
             </form>
         </div>
-    
+  
         <div class="form-photos">
             <img src="images/cropmedel_side.jpg" alt="Image Description">
         </div>
@@ -375,59 +427,91 @@
     
 <!-- HTML code remains the same -->
 
+
+
+
 <script>
-    // Function to handle form submission
-    function handleSubmit(event) {
-        event.preventDefault(); // Prevent the default form submission
-        var initialWaterInputs = document.querySelectorAll('input[name="initial_water"]:checked');
-        var sowingDateInputs = document.querySelectorAll('input[name="sowing_date"]:checked');
-        
-        if (initialWaterInputs.length === 0 || sowingDateInputs.length === 0) {
-            alert("Please select at least one option for Initial Water Content and Sowing Date.");
-            return;
-        }
+// Function to generate text combinations
+function generateTextCombinations(initialWaterInputs, sowingDateInputs, sowingNInputs, f2wasInputs, f4wasInputs, f6wasInputs) {
+    var resultTexts = [];
 
-        // Create an array to store the result texts
-        var resultTexts = [];
+    // Process Initial Water Content selections
+    for (var i = 0; i < initialWaterInputs.length; i++) {
+        var initialWaterValue = initialWaterInputs[i].value;
 
-        // Process Initial Water Content selections
-        for (var i = 0; i < initialWaterInputs.length; i++) {
-            // Process Sowing Date selections
-            for (var j = 0; j < sowingDateInputs.length; j++) {
-                // Concatenate the values and add to the resultTexts array
-                resultTexts.push(initialWaterInputs[i].value + sowingDateInputs[j].value);
+        // Process Sowing Date selections
+        for (var j = 0; j < sowingDateInputs.length; j++) {
+            var sowingDateValue = sowingDateInputs[j].value;
+
+            // Process Sowing N selections
+            for (var k = 0; k < sowingNInputs.length; k++) {
+                var sowingNValue = sowingNInputs[k].value;
+
+                // Process Fertilizer 2 weeks after sowing selections
+                for (var l = 0; l < f2wasInputs.length; l++) {
+                    var f2wasValue = f2wasInputs[l].value;
+
+                    // Process Fertilizer 4 weeks after sowing selections
+                    for (var m = 0; m < f4wasInputs.length; m++) {
+                        var f4wasValue = f4wasInputs[m].value;
+
+                        // Process Fertilizer 6 weeks after sowing selections
+                        for (var n = 0; n < f6wasInputs.length; n++) {
+                            var f6wasValue = f6wasInputs[n].value;
+
+                            // Concatenate the values and add to the resultTexts array
+                            var resultText = `${initialWaterValue}${sowingDateValue}${sowingNValue}${f2wasValue}${f4wasValue}${f6wasValue}`;
+                            resultTexts.push(resultText);
+                        }
+                    }
+                }
             }
-        }
-
-        // Display the result texts or perform any desired action (e.g., sending the texts to the server)
-        if (resultTexts.length > 0) {
-            //alert("Results:\n" + resultTexts.join("\n"));
-            //window.location.href = 'connectboxs.php';
-            const resultTextsJSON = JSON.stringify(resultTexts);
-
-            // Redirect to hii.php with the resultTexts as a query parameter
-            window.location.href = 'connectboxs.php?resultTexts=' + encodeURIComponent(resultTextsJSON);
         }
     }
 
-    // Attach the form submission handler to the form element
-    var form = document.querySelector('form');
-    form.addEventListener('submit', handleSubmit);
+    return resultTexts;
+}
+
+
+// Function to handle form submission
+function handleSubmit(event) {
+    event.preventDefault(); // Prevent the default form submission
+    var initialWaterInputs = document.querySelectorAll('input[name="initial_water"]:checked');
+    var sowingDateInputs = document.querySelectorAll('input[name="sowing_date"]:checked');
+    var sowingNInputs = document.querySelectorAll('input[name="sowing_n"]:checked');
+    var f2wasInputs = document.querySelectorAll('input[name="F2WAS"]:checked');
+    var f4wasInputs = document.querySelectorAll('input[name="F4WAS"]:checked');
+    var f6wasInputs = document.querySelectorAll('input[name="F6WAS"]:checked');
+
+    if (initialWaterInputs.length === 0 || sowingDateInputs.length === 0 || sowingNInputs.length === 0 || f2wasInputs.length === 0 || f4wasInputs.length === 0 || f6wasInputs.length === 0) {
+        alert("Please select at least one option for all checkboxes.");
+        return;
+    }
+
+    // Generate text combinations
+    var resultTexts = generateTextCombinations(initialWaterInputs, sowingDateInputs, sowingNInputs, f2wasInputs, f4wasInputs, f6wasInputs);
+
+    // Redirect to "connectboxs.php" with query parameters
+    if (resultTexts.length > 0) {
+        const resultTextsJSON = JSON.stringify(resultTexts);
+
+        // Construct the query parameters string
+        const queryParams = `resultTexts=${encodeURIComponent(resultTextsJSON)}`;
+
+        // Redirect to "connectboxs.php" with the query parameters
+        window.location.href = `connectboxs.php?${queryParams}`;
+    }
+}
+
+
+// Attach the form submission handler to the form element
+var form = document.querySelector('form');
+form.addEventListener('submit', handleSubmit);
+
 </script>
-
-       
-    
-    
   
-    <!-- end clients -->
-    <!-- contact -->
 
-    
 
-   
-    <!-- end contact -->
-
-    <!-- footer -->
     <!--  footer -->
     <footr>
         <div id="contact" class="footer top_layer ">
