@@ -224,19 +224,26 @@
         //createScatterPlot(xData, yData);
 
 
-        // Function to create a scatter plot using Plotly with an agriculture theme
-        function createScatterPlot(xData, yData) {
-            var trace = {
-                x: xData,
-                y: yData,
-                mode: 'markers',
-                type: 'scatter',
-                name: 'Scatter plot',
-                marker: {
-                    color: '#157954', // Green color for data points
-                    size: 8, // Adjust the size of markers
-                },
-            };
+        function formatXData(x) {
+            return x.substring(0, 2) + ',' + x.substring(2, 8) + ',' + x.substring(8, 10) + ',' + x.substring(10, 12) + ',' + x.substring(12, 14) + ',' + x.substring(14, 16);
+        }
+
+function createScatterPlot(xData, yData) {
+    // Format x-axis data
+    var formattedXData = xData.map(formatXData);
+
+    // Create trace
+    var trace = {
+        x: formattedXData,
+        y: yData,
+        mode: 'markers',
+        type: 'scatter',
+        name: 'Scatter plot',
+        marker: {
+            color: '#157954', // Green color for data points
+            size: 8, // Adjust the size of markers
+        },
+    };
 
             var layout = {
                 title: 'SCATTER PLOT',
@@ -252,8 +259,10 @@
 
         // Function to create a box plot using Plotly with an agriculture theme
         function createBoxPlot(xData, yData) {
+            var formattedXData = xData.map(formatXData);
+
             var trace = {
-                x: xData,
+                x: formattedXData,
                 y: yData,
                 type: 'box',
                 name: 'Box Plot',
