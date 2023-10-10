@@ -240,8 +240,8 @@
 
             var layout = {
                 title: 'SCATTER PLOT',
-                xaxis: { title: 'X-Axis' },
-                yaxis: { title: 'Y-Axis' },
+                xaxis: { title: 'Scenarios' },
+                yaxis: { title: 'Yield-Values'},
                 paper_bgcolor: 'rgb(233, 233, 233)',
                 plot_bgcolor: 'rgb(233, 233, 233)',
             };
@@ -264,8 +264,8 @@
 
             var layout = {
                 title: 'BOX PLOT',
-                xaxis: { title: 'X-Axis' },
-                yaxis: { title: 'Y-Axis' },
+                xaxis: { title: 'Scenarios' },
+                yaxis: { title: 'Yield-Values' },
                 paper_bgcolor: 'rgb(233, 233, 233)',
                 plot_bgcolor: 'rgb(233, 233, 233)',
             };
@@ -313,8 +313,8 @@
 
     var layout = {
         title: 'PROBABILITY EXCEDENCE',
-        xaxis: { title: 'X-Axis' },
-        yaxis: { title: 'Y-Axis' },
+        xaxis: { title: 'Yield-Values' },
+        yaxis: { title: 'Probability' },
         paper_bgcolor: 'rgb(233, 233, 233)',
         plot_bgcolor: 'rgb(233, 233, 233)',
         legend: { font: { size: 16 } }
@@ -364,8 +364,8 @@
 
     var layout = {
         title: 'CUMULATIVE DISTRIBUTION',
-        xaxis: { title: 'X-Axis' },
-        yaxis: { title: 'Y-Axis' },
+        xaxis: { title: 'Yield-Values' },
+        yaxis: { title: 'Cumulative Values' },
         paper_bgcolor: 'rgb(233, 233, 233)',
         plot_bgcolor: 'rgb(233, 233, 233)',
         legend: { font: { size: 16 } }
