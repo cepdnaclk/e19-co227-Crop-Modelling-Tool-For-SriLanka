@@ -267,7 +267,7 @@
             <div class="image-container">
                 <img src="images/logo.png" alt="Logo" height= auto width="100px">
             </div>
-            <form action="connectboxs.php" method="post">
+            <form action="../Back End/connectboxs.php" method="post">
         
                 
                 <!-- Site Dropdown -->
@@ -365,7 +365,7 @@
                 <!-- Fertilizer 2 week after sowing -->
                 <div class="checkbox-group">
                     <label>Fertilizer (2 weeks after sowing):</label>
-                    <input type="checkbox" id="F2WAS_00" name="F2WAS" value="00">
+                    <input type="checkbox" id="F2WAS_00" name="F2WAS" value="0">
                     <label for="F2WAS_0">0</label>
     
                     <input type="checkbox" id="F2WAS_20" name="F2WAS" value="20">
@@ -382,7 +382,7 @@
                 <!-- Fertilizer 4 week after sowing -->
                 <div class="checkbox-group">
                     <label>Fertilizer (4 weeks after sowing):</label>
-                    <input type="checkbox" id="F4WAS_00" name="F4WAS" value="00">
+                    <input type="checkbox" id="F4WAS_00" name="F4WAS" value="0">
                     <label for="F4WAS_0">0</label>
     
                     <input type="checkbox" id="F4WAS_20" name="F4WAS" value="20">
@@ -399,7 +399,7 @@
                 <!-- Fertilizer 6 week after sowing -->
                 <div class="checkbox-group">
                     <label>Fertilizer (6 weeks after sowing):</label>
-                    <input type="checkbox" id="F6WAS_00" name="F6WAS" value="00">
+                    <input type="checkbox" id="F6WAS_00" name="F6WAS" value="0">
                     <label for="F6WAS_0">0</label>
     
                     <input type="checkbox" id="F6WAS_20" name="F6WAS" value="20">
@@ -472,7 +472,6 @@ function generateTextCombinations(initialWaterInputs, sowingDateInputs, sowingNI
     return resultTexts;
 }
 
-
 // Function to handle form submission
 function handleSubmit(event) {
     event.preventDefault(); // Prevent the default form submission
@@ -491,18 +490,15 @@ function handleSubmit(event) {
     // Generate text combinations
     var resultTexts = generateTextCombinations(initialWaterInputs, sowingDateInputs, sowingNInputs, f2wasInputs, f4wasInputs, f6wasInputs);
 
-    // Redirect to "connectboxs.php" with query parameters
+    // Display the result texts or perform any desired action (e.g., sending the texts to the server)
     if (resultTexts.length > 0) {
         const resultTextsJSON = JSON.stringify(resultTexts);
 
-        // Construct the query parameters string
-        const queryParams = `resultTexts=${encodeURIComponent(resultTextsJSON)}`;
-
-        // Redirect to "connectboxs.php" with the query parameters
-        window.location.href = `connectboxs.php?${queryParams}`;
+        // Display the result in the "resultContainer" div
+        var resultContainer = document.getElementById('resultContainer');
+        resultContainer.innerHTML = '<p>Result Texts:</p><pre>' + resultTextsJSON + '</pre>';
     }
 }
-
 
 // Attach the form submission handler to the form element
 var form = document.querySelector('form');

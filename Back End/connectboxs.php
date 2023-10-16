@@ -108,8 +108,8 @@
         <!-- This is for choosing the type of graph -->
         <label for="select-data">SELECT GRAPH TYPE :&nbsp </label>
         <select id="select-data">
-            <option value="Scatter" selected>SCATTER</option>
-            <option value="Box">BOX</option>
+            <option value="Box" selected>BOX PLOT</option>
+            <option value="Scatter">BAR CHART</option>
             <option value="Cumulative Distribution">CUMULATIVE DISTRIBUTION</option>
             <option value="Probability Exceedance">PROBABILITY EXCEEDANCE</option>
             <!-- Add more options as needed -->
@@ -147,11 +147,9 @@
             $selections = json_decode($resultTextsJSON, true); // Decode JSON into an array
             // Now you can use the $selections array in your PHP code
         }
-        foreach ($selections as $selection) {
-            echo "&nbsp &nbsp &nbsp &#x2022 ";
-            echo ucfirst($selection);
-            echo "<br>";
-        }
+
+        
+        
 
         $tableName = "output"; 
         // Fetch data from the database
@@ -177,16 +175,19 @@
                     }
                 }
             }
+            
         } else {
             echo "Error: " . $conn->error;
         }
     }
+    
 
     $conn->close();
     ?>
     
     <!-- Add a div element to hold the scatter plot -->
     <div id="chart"></div>
+    <div id="medianResults"></div>
     <script>
         // Get the x and y arrays from PHP
         var xData = <?php echo json_encode($key); ?>;
@@ -194,13 +195,38 @@
         var y2Data = <?php echo json_encode($probability); ?>;
         var y3Data = <?php echo json_encode($cumulative); ?>;
 
+        //Display scenario which has maximum median
+            //Median for every scanario(key)
+            var median = getMedian(xData, yData);
+            // Display medians on the HTML page
+            var medianResultsDiv = document.getElementById('medianResults');
+            var maxMedian = 0;
+            // Iterate through each property (key) in the 'median' object
+            for (var x in median) {
+                if (median.hasOwnProperty(x)) {
+                    // Compare the current median value with the current maximum median
+                    if (median[x]>=maxMedian){
+                        // Update the maximum median value
+                        maxMedian = median[x];
+                    }   
+                }
+            }
+            var result = document.createElement('p');
+            console.log(`Median for ${x}: ${median[x]}`);
+            //Best scenario
+ 
+            result.innerHTML = `<span style="font-size: 24px;">To achieve the maximum yield from your selected scenarios, ensure an initial water content of <span style="color: red">${x.substring(0, 2)}</span>, and initial nitrogen level of <span style="color: red">${x.substring(8, 10)}</span>. Plan to crop on <span style="font-weight: bold; color: red">${x.substring(2, 8)}</span>. Apply Urea fertilizer at two weeks, four weeks, and six weeks with values of <span style="font-weight: bold; color: red">${x.substring(10, 12)}</span>, <span style="font-weight: bold; color: red">${x.substring(12, 14)}</span>, <span style="font-weight: bold; color: red">${x.substring(14, 16)}</span> accordingly. Following this schedule, the expected average yield is approximately <span style="font-weight: bold; color: red">${maxMedian}</span>.</span>`;
+            medianResultsDiv.appendChild(result);
+        
         // Event listener for the select element
         document.getElementById('select-data').addEventListener('change', function () {
             var selectedValue = this.value;
-
+            
             // Determine which chart type to create
             if (selectedValue === 'Scatter') {
-                createScatterPlot(xData, yData);
+                createBarChart(xData, yData);
+               
+
             } else if (selectedValue === 'Box') {
                 createBoxPlot(xData, yData);
             }
@@ -210,43 +236,39 @@
                 createCumulativePlot(yData, y3Data,xData);
             }
             // Add more conditions for other chart types as needed
+            
         });
         // Set default selected option on page load
         document.addEventListener('DOMContentLoaded', function () {
-            var defaultSelectedValue = 'Scatter';
+            var defaultSelectedValue = 'Box';
             document.getElementById('select-data').value = defaultSelectedValue;
 
             // Initialize the chart based on the default selection (scatter plot)
-            createScatterPlot(xData, yData);
+            createBoxPlot(xData, yData);
         });
 
         // Initialize the chart based on the default selection (scatter plot)
         //createScatterPlot(xData, yData);
+        
 
+        // Function to create a scatter plot using Plotly with an agriculture theme
+        function createBarChart(xData, yData) {
+            var formattedXData = xData.map(formatXData);
 
-        function formatXData(x) {
-            return x.substring(0, 2) + ',' + x.substring(2, 8) + ',' + x.substring(8, 10) + ',' + x.substring(10, 12) + ',' + x.substring(12, 14) + ',' + x.substring(14, 16);
-        }
-
-function createScatterPlot(xData, yData) {
-    // Format x-axis data
-    var formattedXData = xData.map(formatXData);
-
-    // Create trace
-    var trace = {
-        x: formattedXData,
-        y: yData,
-        mode: 'markers',
-        type: 'scatter',
-        name: 'Scatter plot',
-        marker: {
-            color: '#157954', // Green color for data points
-            size: 8, // Adjust the size of markers
-        },
-    };
+            var trace = {
+                x: formattedXData,
+                y: yData,
+                mode: 'markers',
+                type: 'bar',
+                name: 'Scatter plot',
+                marker: {
+                    color: '#157954', // Green color for data points
+                    size: 8, // Adjust the size of markers
+                },
+            };
 
             var layout = {
-                title: 'SCATTER PLOT',
+                title: 'BAR CHART',
                 xaxis: { title: 'Scenarios' },
                 yaxis: { title: 'Yield-Values'},
                 paper_bgcolor: 'rgb(233, 233, 233)',
@@ -281,6 +303,7 @@ function createScatterPlot(xData, yData) {
 
             // Create the box plot inside the 'chart' div
             Plotly.newPlot('chart', [trace], layout);
+            
         }
 
         function createProbabilityPlot(xData, yData,colordata) {
@@ -395,6 +418,34 @@ function getRandomColor() {
     return color;
 }
 
+function getMedian(xdata, ydata) {
+    var groupedData = {};
+    var medians = {};
+
+    xData.forEach((x, index) => {
+        if (!groupedData[x]) {
+            groupedData[x] = [];
+        }
+        groupedData[x].push(parseFloat(yData[index]));
+    });
+
+    for (var x in groupedData) {
+        if (groupedData.hasOwnProperty(x)) {
+            var data = groupedData[x];
+            var sortedData = data.slice().sort((a, b) => a - b);
+            var medianIndex = Math.floor(sortedData.length / 2);
+            medians[x] = sortedData.length % 2 === 0
+                ? (sortedData[medianIndex - 1] + sortedData[medianIndex]) / 2
+                : sortedData[medianIndex];
+        }
+    }
+
+    return medians;
+}
+
+function formatXData(x) {
+            return x.substring(0, 2) + ',' + x.substring(2, 8) + ',' + x.substring(8, 10) + ',' + x.substring(10, 12) + ',' + x.substring(12, 14) + ',' + x.substring(14, 16);
+        }
 
     </script>
 </body>
