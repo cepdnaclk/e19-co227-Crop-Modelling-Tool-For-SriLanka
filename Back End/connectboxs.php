@@ -45,6 +45,14 @@
             margin-left: 10px; /* Add left margin to move the container to the left */
             margin-right: 10px; /* Add right margin to center-align the container */
         }
+        .promtMsg {
+            font-family: poppins;
+            padding: 20px 0px; /* Increased top and bottom padding */
+            background: #052501;
+            background-size: cover; /* Ensures the background covers the entire header */
+            color: white;
+            margin-left: 10px;
+        }
 
         /* Dropdown */
         #select-data {
@@ -186,8 +194,8 @@
     ?>
     
     <!-- Add a div element to hold the scatter plot -->
-    <div id="chart"></div>
-    <div id="medianResults"></div>
+    <div class = "dropdown-container" id="chart"></div>
+    <div class = "promtMsg" id="medianResults"></div>
     <script>
         // Get the x and y arrays from PHP
         var xData = <?php echo json_encode($key); ?>;
@@ -215,7 +223,11 @@
             console.log(`Median for ${x}: ${median[x]}`);
             //Best scenario
  
-            result.innerHTML = `<span style="font-size: 24px;">To achieve the maximum yield from your selected scenarios, ensure an initial water content of <span style="color: red">${x.substring(0, 2)}</span>, and initial nitrogen level of <span style="color: red">${x.substring(8, 10)}</span>. Plan to crop on <span style="font-weight: bold; color: red">${x.substring(2, 8)}</span>. Apply Urea fertilizer at two weeks, four weeks, and six weeks with values of <span style="font-weight: bold; color: red">${x.substring(10, 12)}</span>, <span style="font-weight: bold; color: red">${x.substring(12, 14)}</span>, <span style="font-weight: bold; color: red">${x.substring(14, 16)}</span> accordingly. Following this schedule, the expected average yield is approximately <span style="font-weight: bold; color: red">${maxMedian}</span>.</span>`;
+            if (x.length === 16) {
+    result.innerHTML = `<span style="font-size: 24px;">To achieve the maximum yield from your selected scenarios, ensure an initial water content of <span style="color: red">${x.substring(0, 2)}</span>, and initial nitrogen level of <span style="color: red">${x.substring(8, 10)}</span>. Plan to crop on <span style="font-weight: bold; color: red">${x.substring(2, 8)}</span>. Apply Urea fertilizer at two weeks, four weeks, and six weeks with values of <span style="font-weight: bold; color: red">${x.substring(10, 12)}</span>, <span style="font-weight: bold; color: red">${x.substring(12, 14)}</span>, <span style="font-weight: bold; color: red">${x.substring(14, 16)}</span> accordingly. Following this schedule, the expected average yield is approximately <span style="font-weight: bold; color: red">${maxMedian}</span>.</span>`;
+} else {
+    result.innerHTML = `<span style="font-size: 24px;">To achieve the maximum yield from your selected scenarios, ensure an initial water content of <span style="color: red">${x.substring(0, 2)}</span>, and initial nitrogen level of <span style="color: red">${x.substring(8, 11)}</span>. Plan to crop on <span style="font-weight: bold; color: red">${x.substring(2, 8)}</span>. Apply Urea fertilizer at two weeks, four weeks, and six weeks with values of <span style="font-weight: bold; color: red">${x.substring(11, 13)}</span>, <span style="font-weight: bold; color: red">${x.substring(13, 15)}</span>, <span style="font-weight: bold; color: red">${x.substring(15, 17)}</span> accordingly. Following this schedule, the expected average yield is approximately <span style="font-weight: bold; color: red">${maxMedian}</span>.</span>`;
+}
             medianResultsDiv.appendChild(result);
         
         // Event listener for the select element
@@ -271,8 +283,8 @@
                 title: 'BAR CHART',
                 xaxis: { title: 'Scenarios' },
                 yaxis: { title: 'Yield-Values'},
-                paper_bgcolor: 'rgb(233, 233, 233)',
-                plot_bgcolor: 'rgb(233, 233, 233)',
+                paper_bgcolor: 'rgb(233, 233, 233,0.7)',
+                plot_bgcolor: 'rgb(233, 233, 233,0.7)',
             };
 
             // Create the scatter plot inside the 'chart' div
@@ -297,8 +309,8 @@
                 title: 'BOX PLOT',
                 xaxis: { title: 'Scenarios' },
                 yaxis: { title: 'Yield-Values' },
-                paper_bgcolor: 'rgb(233, 233, 233)',
-                plot_bgcolor: 'rgb(233, 233, 233)',
+                paper_bgcolor: 'rgb(233, 233, 233,0.7)',
+                plot_bgcolor: 'rgb(233, 233, 233,0.7)',
             };
 
             // Create the box plot inside the 'chart' div
@@ -347,8 +359,8 @@
         title: 'PROBABILITY EXCEDENCE',
         xaxis: { title: 'Yield-Values' },
         yaxis: { title: 'Probability' },
-        paper_bgcolor: 'rgb(233, 233, 233)',
-        plot_bgcolor: 'rgb(233, 233, 233)',
+        paper_bgcolor: 'rgb(233, 233, 233,0.7)',
+        plot_bgcolor: 'rgb(233, 233, 233,0.7)',
         legend: { font: { size: 16 } }
     };
 
@@ -398,8 +410,8 @@
         title: 'CUMULATIVE DISTRIBUTION',
         xaxis: { title: 'Yield-Values' },
         yaxis: { title: 'Cumulative Values' },
-        paper_bgcolor: 'rgb(233, 233, 233)',
-        plot_bgcolor: 'rgb(233, 233, 233)',
+        paper_bgcolor: 'rgb(233, 233, 233,0.7)',
+        plot_bgcolor: 'rgb(233, 233, 233,0.7)',
         legend: { font: { size: 16 } }
     };
 
@@ -444,7 +456,12 @@ function getMedian(xdata, ydata) {
 }
 
 function formatXData(x) {
-            return x.substring(0, 2) + ',' + x.substring(2, 8) + ',' + x.substring(8, 10) + ',' + x.substring(10, 12) + ',' + x.substring(12, 14) + ',' + x.substring(14, 16);
+    if(x.length===16){
+        return x.substring(0, 2) + ',' + x.substring(2, 8) + ',' + x.substring(8, 10) + ',' + x.substring(10, 12) + ',' + x.substring(12, 14) + ',' + x.substring(14, 16);
+    }else{
+        return x.substring(0, 2) + ',' + x.substring(2, 8) + ',' + x.substring(8, 11) + ',' + x.substring(11, 13) + ',' + x.substring(13, 15) + ',' + x.substring(15, 17);
+
+    }
         }
 
     </script>
