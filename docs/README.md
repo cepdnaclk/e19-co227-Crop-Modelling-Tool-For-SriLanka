@@ -3,8 +3,8 @@ layout: home
 permalink: index.html
 
 # Please update this with your repository name and title
-repository-name: eYY-XXX-project-template
-title: e19-co227-Crop-Modelling-Tool-For-SriLanka
+repository-name: e19-co227-Crop-Modelling-Tool-For-SriLanka
+title: Crop Modelling Tool For SriLanka
 ---
 
 [comment]: # "This is the standard layout for the project, but you can clean this and use your own template"
