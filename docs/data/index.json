@@ -1,12 +1,12 @@
 {
     "team": [
         {
-            "name": "Thevambikai",
+            "name": "Thevambikai T.",
             "email": "e19494@eng.pdn.ac.lk",
             "eNumber": "E/19/494"
         },
         {
-            "name": "Harishanth",
+            "name": "Harishanth A.",
             "email": "e19133eng.pdn.ac.lk",
             "eNumber": "E/19/133"
         },
@@ -16,7 +16,7 @@
             "eNumber": "E/19/371"
         },
         {
-            "name": "Hayanan",
+            "name": "Hayanan T.",
             "email": "e19137@eng.pdn.ac.lk",
             "eNumber": "E/19/137"
         }
@@ -27,5 +27,5 @@
             "email": "damayanthiherath@eng.pdn.ac.lk"
         }
     ],
-    "tags": []
+    "tags": ["CO227","Crop Modelling Tool"]
 }
